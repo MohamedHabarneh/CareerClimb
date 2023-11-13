@@ -8,7 +8,7 @@
 <script lang="ts">
   import Navbar from '$lib/navbar.svelte';
   import { user } from '../stores';
-  
+  import "../app.css"
 
   $:User = $user;
 </script>

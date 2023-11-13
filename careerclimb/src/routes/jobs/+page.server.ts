@@ -26,7 +26,7 @@ export async function load ({ fetch, params, locals}){
     finally{
     }
     const collection = await jobDbConn();
-    const topTwoJobs = await collection.find().limit(4).toArray();
+    const topTwoJobs = await collection.find().toArray();
     const serializableJobs = topTwoJobs.map(job => {
         const {_id, ...jobDataWithoutId} = job;
         return jobDataWithoutId;

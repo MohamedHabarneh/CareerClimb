@@ -44,9 +44,7 @@ export const actions:Actions = {
                 console.log("WithoutPass", userAttemptLoginMinusPassword);
                 const authToken = jwt.sign({authUser: userAttemptLoginMinusPassword}, SALT, {expiresIn:'24h'});
                 cookies.set('authToken',authToken, {httpOnly: true, maxAge: 60*60*24, sameSite: 'strict'});
-                console.log("Before the redirect", loginResponse);
-                user.set(userAttemptLoginMinusPassword)
-                console.log("new user set", userAttemptLoginMinusPassword)
+                // user.set(userAttemptLoginMinusPassword)
                 throw redirect(302,'/home');
             }
         }

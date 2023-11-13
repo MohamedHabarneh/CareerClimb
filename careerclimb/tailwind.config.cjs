@@ -1,12 +1,21 @@
-/** @type {import('tailwindcss').Config}*/
-const config = {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
-
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {}
   },
-
-  plugins: [],
+  plugins: []
 };
 
-module.exports = config;
+// /** @type {import('tailwindcss').Config}*/
+// const config = {
+//   content: ["./src/**/*.{html,js,svelte,ts}"],
+
+//   theme: {
+//     extend: {},
+//   },
+
+//   plugins: [],
+// };
+
+// module.exports = config;

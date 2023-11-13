@@ -6,6 +6,15 @@ import { findUserByEmail } from "./backendUtils";
 import { dbConn } from "$lib/dbConn";
 import jwt from 'jsonwebtoken';
 import type { UserWithoutPass } from "./types/user";
+// import type { Job } from "./types/job";
+
+// import jobss from "./jobs.json"
+
+start_mongo().then(() => {
+    console.log("Mongo started");
+}).catch((e) => {
+     console.error(e);
+})
 
 
 export async function handle({event, resolve}){
@@ -28,11 +37,21 @@ export async function handle({event, resolve}){
         return response;
     }
     
-
-    start_mongo().then(() => {
-        console.log("Mongo started");
-    }).catch((e) => {
-         console.error(e);
-    })
     
 }
+// const jobCollection = await jobDbConn();
+
+// for(let i = 0; i < jobss.length; i++){
+//     let temp: Job = {
+//         company: jobss[i]["company"],
+//         jobTitle: jobss[i]["jobTitle"],
+//         location: jobss[i]["location"],
+//         description: jobss[i]["description"],
+//         experienceLevel: jobss[i]["experienceLevel"],
+//         position: jobss[i]["position"],
+//         postDate: jobss[i]["postDate"],
+//         jobLink: jobss[i]["jobLink"]
+//     }
+//     const insertedJob = await InsertNewJob(jobCollection, temp);
+    
+// }

@@ -1,18 +1,42 @@
 [
     {
+      "company": "IDT",
       "jobTitle": "Software Engineer",
-      "company": "ABC Tech",
-      "description": "Description for Software Engineer position",
-      "experienceLevel": "Senior",
+      "location": "California, United States",
+      "description": "The selected Software Engineer will be responsible for designing, developing, testing, and integrating software solutions to support our customers. The main role of the Software Engineer is to build high-quality, innovative, and performant software that complies with coding standards and technical design. Software Engineer responsibilities include gathering user requirements, defining system functionality, writing code in various languages (such as Java, JavaScript, Python & C++), and verifying software functionality through testing. The ideal candidate is familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.",
+      "experienceLevel": "Mid-Senior Level",
       "position": "Full-time",
-      "postDate": "2023-10-20"
+      "postDate": "11-10-2023",
+      "jobLink": "https://jobs.jobvite.com/idtus/job/omd8jfwK?__jvst=Job%20Board&__jvsd=LinkedIn"
     },
     {
-      "jobTitle": "Data Scientist",
-      "company": "XYZ Data",
-      "description": "Description for Data Scientist position",
-      "experienceLevel": "Mid-Level",
+      "company": "MUUD Technology",
+      "jobTitle": "Frontend Engineer",
+      "location": "United States",
+      "description": "MUUD Technology is a health tech startup that creates applications and wearable smart-technology trackers for personal and community wellness. Latitude Mental Health represents the administrative division of MUUD and provides the primary administrative management of MUUD technical operations. Latitude Mental Health is a multifaceted mental health practice that promotes wellness using holistic mental health care. Since its founding in 2018, Latitude has been committed to improving performance in both health and profession through the integration of evidence based medicine, therapy, mental fitness coaching, and innovative technology. Our work environment is one of trust, understanding, and innovation.",
+      "experienceLevel": "Entry",
       "position": "Contract",
-      "postDate": "2023-10-15"
+      "postDate": "11-13-2023",
+      "jobLink": "https://www.linkedin.com/jobs/search/?currentJobId=3758113424&distance=25&geoId=102095887&keywords=Software%20Engineer&origin=JOBS_HOME_KEYWORD_HISTORY&refresh=true"
+    },
+    {
+      "company": "Storm3",
+      "jobTitle": "Full Stack Engineer",
+      "location": "San Francisco Bay Area",
+      "description": "Want to join a company that where you'd be working alongside a team of world-class scientists, engineers, advisors and product designers? Well, we are exclusively partnered with growing company in the wearables space that is pushing the frontiers of technology by connecting with neural interfaces.They are looking for a Founding Fullstack Engineer eager to grow their career alongside some serious veterans while working with neuroscientists and machine learning engineers to design a real-time research platform. You will develop and own the backend, cloud infrastructure and web application which will be the hub of the engineering work which will change the way consumer electronics works in this day in age.",
+      "experienceLevel": "Mid-Senior Level",
+      "position": "Full-time",
+      "postDate": "11-9-2023",
+      "jobLink": "https://www.linkedin.com/jobs/search/?currentJobId=3756032379&distance=25&geoId=102095887&keywords=Software%20Engineer&origin=JOBS_HOME_KEYWORD_HISTORY&refresh=true"
+    },
+    {
+      "company": "Meta",
+      "jobTitle": "Frontend Engineer",
+      "location": "Los Angeles, CA",
+      "description": "Meta Platforms, Inc. (Meta), formerly known as Facebook Inc., builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps and services like Messenger, Instagram, WhatsApp, and Novi further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology.Instructions on how to apply, click “Apply to Job” online on this web page.",
+      "experienceLevel": "Mid Level",
+      "position": "Full-time",
+      "postDate": "11-11-2023",
+      "jobLink": "https://www.metacareers.com/jobs/239098052423376/?rx_campaign=Linkedin1&rx_ch=connector&rx_group=126320&rx_job=a1K2K000007p5ddUAA_1007&rx_medium=post&rx_r=none&rx_source=Linkedin&rx_ts=20231113T124801Z&rx_vp=slots&utm_campaign=Job%2Bboard&utm_medium=jobs&utm_source=LIpaid&rx_viewer=1f69b3ed826611eeaf2809bd24f853b3edc24d854d7545bf83a4d96014c948a8"
     }
   ]
