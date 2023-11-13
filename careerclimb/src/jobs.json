@@ -1,0 +1,18 @@
+[
+    {
+      "jobTitle": "Software Engineer",
+      "company": "ABC Tech",
+      "description": "Description for Software Engineer position",
+      "experienceLevel": "Senior",
+      "position": "Full-time",
+      "postDate": "2023-10-20"
+    },
+    {
+      "jobTitle": "Data Scientist",
+      "company": "XYZ Data",
+      "description": "Description for Data Scientist position",
+      "experienceLevel": "Mid-Level",
+      "position": "Contract",
+      "postDate": "2023-10-15"
+    }
+  ]
