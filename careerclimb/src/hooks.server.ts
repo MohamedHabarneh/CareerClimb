@@ -2,12 +2,14 @@
 //lets you handle those request
 import { start_mongo } from "$lib/mongo";
 import { SALT } from "$env/static/private";
-import { findUserByEmail } from "./backendUtils";
+import { findUserByEmail} from "./backendUtils";
 import { dbConn } from "$lib/dbConn";
 import jwt from 'jsonwebtoken';
 import type { UserWithoutPass } from "./types/user";
-// import type { Job } from "./types/job";
 
+// import type { Job } from "./types/job";
+// import type { Company } from "./types/company";
+// import jobss from "./output2.json"
 // import jobss from "./jobs.json"
 
 start_mongo().then(() => {
@@ -16,8 +18,8 @@ start_mongo().then(() => {
      console.error(e);
 })
 
-
 export async function handle({event, resolve}){
+    console.time('Handle');
     const authToken = event.cookies.get('authToken');
     try{
         if(!authToken) event.locals.authedUser = undefined;
@@ -34,24 +36,44 @@ export async function handle({event, resolve}){
     }
     finally{
         const response = await resolve(event);
+        console.timeEnd('Handle');
         return response;
     }
     
     
 }
-// const jobCollection = await jobDbConn();
 
+//For adding new job posts and companies
+// const jobCollection = await jobDbConn();
+// const compCollection = await companyDbConn();
+// await compCollection.createIndex({companyName: 1}, {unique : true});
 // for(let i = 0; i < jobss.length; i++){
-//     let temp: Job = {
-//         company: jobss[i]["company"],
-//         jobTitle: jobss[i]["jobTitle"],
-//         location: jobss[i]["location"],
-//         description: jobss[i]["description"],
-//         experienceLevel: jobss[i]["experienceLevel"],
-//         position: jobss[i]["position"],
-//         postDate: jobss[i]["postDate"],
-//         jobLink: jobss[i]["jobLink"]
+//     const companyNameToSearch = (jobss[i]["company"] || "test").trim();
+//     const jobTitleToSearch = (jobss[i]["job-title"] || "test").trim();
+//     if(jobss[i]["company"] != null && jobss[i]["job-title"] != null){
+//         console.log("Checking current company: ", jobss[i]["company"])
+//         const findCompany = await FindCompanyByName(compCollection,(jobss[i]["company"] || "test").trim());
+//         if(findCompany == null){
+//             let companyTemp: Company = {
+//                 companyName: jobss[i]["company"]
+//             }
+//             console.log("INSERTED NEW COMPANY!");
+//             const insertNewCompany = await InsertNewCompany(compCollection, companyTemp);
+//         }
+//         // @ts-ignore
+//         const findJob = await FindJobByCompanyAndTitle(jobCollection, jobss[i]["company"],jobss[i]["job-title"]);
+//         if(findJob == null){
+//             const temp: Job = {
+//                 company: companyNameToSearch,
+//                 jobTitle: jobTitleToSearch,
+//                 location: jobss[i]["location"]?.trim(),
+//                 description: jobss[i]["jobDescription"]?.trim(),
+//                 experienceLevel: jobss[i]["level"]?.trim(),
+//                 employmentType: jobss[i]["employmentType"]?.trim(),
+//                 jobLink: jobss[i]["jobLink"]?.trim(),
+//                 postDate: undefined,
+//             };
+//             const insertedJob = await InsertNewJob(jobCollection, temp);
+//         }
 //     }
-//     const insertedJob = await InsertNewJob(jobCollection, temp);
-    
 // }

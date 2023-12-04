@@ -10,10 +10,10 @@
     $:{
         newUser = data?.authedUser;
         user.set(newUser);
-        console.log("New user", newUser);
-        console.log("user", newUser["firstName"])
+        // console.log("New user", newUser);
+        // console.log("user", newUser["firstName"])
         userName = newUser["firstName"];
-        console.log(userName);
+        // console.log(userName);
     }
     console.log(data);
 
@@ -26,10 +26,15 @@
       <h1> Welcome {@html userName}! </h1>
     {/if}
   </div>
+  <div>
+    <h1 class="text-4xl ml-10">Recommended Jobs:</h1>
+  </div>
+  <br>
   <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 ml-10">
     {#each data.newJobs as job}
-        <div class="group bg-gray-900 p-4 transition-all duration-300 hover:rotate-1 lg:p-8 h-full w-1/2">
-          <div class="flex items-center gap-x-2">
+      {#if job.company !== "LinkedIn"}
+      <div class="group bg-gray-800 p-4 transition-all duration-300 hover:scale-105 lg:p-8 h-full w-1/2">
+        <div class="flex items-center gap-x-2">
             <div>
               <h3 class="text-xl font-bold text-gray-50">{job.company}</h3>
               <span class="text-xs text-gray-300">{job.location}</span>
@@ -38,15 +43,16 @@
           <div>
             <span class="text-xs text-gray-300">{job.experienceLevel}</span>
             </div>
-          <div class="flex items-center justify-left">
-            <span class="text-sm font-medium text-gray-50 mr-10">{job.position}</span>
-            <span class="text-sm font-medium text-gray-50">{job.postDate}</span>
+            <div class="flex items-center justify-left">
+              <span class="text-sm font-medium text-gray-50 mr-10">{job.jobTitle}</span>
+              <!-- <span class="text-sm font-medium text-gray-50">{job.postDate}</span> -->
+            </div>
+            <div>
+              <a class="font-medium text-blue-500 transition-all duration-300 hover:text-blue-800" href={job.jobLink}>Apply</a>
+              <a class="font-medium text-gray-500 transition-all duration-300 hover:text-gray-600" href="/">Details</a>
+            </div>
           </div>
-          <div>
-            <a class="font-medium text-blue-500 transition-all duration-300 group-hover:text-blue-500/80" href={job.jobLink}>Apply</a>
-            <a class="font-medium text-gray-500 transition-all duration-300 group-hover:text-gray-500/80" href="/">Details</a>
-          </div>
-        </div>
+        {/if}
     {/each}
   </div>
   </div>

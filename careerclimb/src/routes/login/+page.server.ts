@@ -45,7 +45,7 @@ export const actions:Actions = {
                 const authToken = jwt.sign({authUser: userAttemptLoginMinusPassword}, SALT, {expiresIn:'24h'});
                 cookies.set('authToken',authToken, {httpOnly: true, maxAge: 60*60*24, sameSite: 'strict'});
                 // user.set(userAttemptLoginMinusPassword)
-                throw redirect(302,'/home');
+                throw redirect(302,'/dashboard');
             }
         }
         finally{

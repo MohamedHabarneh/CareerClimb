@@ -19,20 +19,7 @@ export async function load ({ fetch, params, locals}){
 
     let user = undefined;
 
-    try{
-        const collection = await dbConn();
-        user = findUserByEmail(collection,locals.authedUser.email.toString());
-    }
-    finally{
-    }
-    const collection = await jobDbConn();
-    const topTwoJobs = await collection.find().limit(4).toArray();
-    const serializableJobs = topTwoJobs.map(job => {
-        const {_id, ...jobDataWithoutId} = job;
-        return jobDataWithoutId;
-        
-    })
-    return {newJobs : serializableJobs, authedUser: authedUser};
+    return {authedUser: authedUser};
 }
 
 

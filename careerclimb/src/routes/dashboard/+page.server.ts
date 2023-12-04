@@ -11,9 +11,9 @@ import { jobDbConn } from '$lib/dbConn.js'
 
 export async function load ({ fetch, params, locals}){
     let authedUser = undefined;
-    // if(!locals.authedUser){
-    //     throw redirect(302, '/login');
-    // }
+    if(!locals.authedUser){
+        throw redirect(302, '/login');
+    }
 
     authedUser = locals.authedUser;
 
@@ -21,13 +21,13 @@ export async function load ({ fetch, params, locals}){
 
     try{
         const collection = await dbConn();
-        // user = findUserByEmail(collection,locals.authedUser.email.toString());
+        user = findUserByEmail(collection,locals.authedUser.email.toString());
     }
     finally{
     }
     const collection = await jobDbConn();
-    const topTwoJobs = await collection.find().toArray();
-    const serializableJobs = topTwoJobs.map(job => {
+    const topTwoJobs = await collection.find().limit(4).toArray();
+    const serializableJobs = topTwoJobs.map((job: { [x: string]: any; _id: any }) => {
         const {_id, ...jobDataWithoutId} = job;
         return jobDataWithoutId;
         

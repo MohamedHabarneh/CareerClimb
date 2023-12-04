@@ -2,6 +2,7 @@ import type {Collection} from "mongodb";
 import type {User, UserWithoutId} from "./types/user";
 import type {registerFormData} from "./types/form";
 import type { Job } from "./types/job";
+import type { Company } from "./types/company"
 import bcryptjs from 'bcryptjs';
 
 export const registerUser = async (collection: Collection, user: UserWithoutId) => {
@@ -38,9 +39,32 @@ export const findUserByEmailWithPassword = async (collection: Collection, email:
     return JSON.parse(JSON.stringify(user[0],(key,value) => key === "_id"? value.toString(value) : value));
 }  
 
+
 export const InsertNewJob = async (collection: Collection, jobPost : Job) => {
     const job = await collection.insertOne(jobPost);
     return job;
+}
+
+export const FindJobByCompanyAndTitle = async (collection: Collection, companyName: string, jobTitle: string) => {
+    const projection = { _id: 0};
+    console.log(projection, companyName, jobTitle);
+    const jobRes = await collection.findOne({company:companyName, jobTitle:jobTitle },{projection})
+    console.log("job result: ", jobRes);
+    return jobRes;
+}
+
+export const FindCompanyByName = async (collection: Collection, company: string) => {
+    const projection = { _id: 0, companyName: 1 };
+    console.log(projection, company);
+    const companyRes = await collection.findOne({companyName:company},{projection})
+    console.log("company result: ", companyRes);
+    return companyRes;
+}
+
+export const InsertNewCompany = async (collection: Collection, newCompany: Company) => {
+    const company = await collection.insertOne(newCompany);
+    return company;
+}
     
     
     
@@ -62,4 +86,3 @@ export const InsertNewJob = async (collection: Collection, jobPost : Job) => {
     
     //     return user;
     // }
-}

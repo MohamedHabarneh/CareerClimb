@@ -9,8 +9,8 @@
     let loggedInUser = "";
 
     
-    const nonUserTabs = ['','/','/Home','/Register','/Login'];
-    const userTabs = ['','/','/Home','/Profile','/Jobs', '/Logout'];
+    const nonUserTabs = ['','/','/Home','/Register','/Login', '/Jobs'];
+    const userTabs = ['','/','/Home','/Dashboard','/Profile','/Quiz', '/Jobs', '/Logout'];
 
 
     onMount(() => {
@@ -31,7 +31,11 @@
                     <!-- Display for logged-in users -->
                 <div class="flex items-center justify-center ">
                     {#each userTabs as tab}
-                    <a  href={tab.toLowerCase()} class="text-black ml-4 no-underline hover:text-blue-500">{tab.slice(1)}</a>
+                        {#if tab == "/Home"}
+                            <a  href="/" class="text-black ml-4 no-underline hover:text-blue-500">{tab.slice(1)}</a>
+                        {:else}
+                            <a  href={tab.toLowerCase()} class="text-black ml-4 no-underline hover:text-blue-500">{tab.slice(1)}</a>
+                        {/if}
                     {/each}
                 </div>
             </div>
@@ -40,7 +44,11 @@
                 <!-- Display for logged-in users -->
                 <div class="flex items-center justify-center ">
                     {#each nonUserTabs as tab}
-                    <a  href={tab.toLowerCase()} class="text-black ml-4 no-underline hover:text-blue-500">{tab.slice(1)}</a>
+                        {#if tab == "/Home"}
+                            <a  href="/" class="text-black ml-4 no-underline hover:text-blue-500">{tab.slice(1)}</a>
+                        {:else}
+                            <a  href={tab.toLowerCase()} class="text-black ml-4 no-underline hover:text-blue-500">{tab.slice(1)}</a>
+                        {/if}
                     {/each}
                 </div>
             </div>

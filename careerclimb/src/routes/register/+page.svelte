@@ -6,7 +6,7 @@
 
 <div class="flex items-center justify-center">
     <div class="flex items-center justify-center h-screen">
-        <form class="bg-blue-400 p-5 rounded-lg" method="post" action="?/register">
+        <form class="bg-gray-700 p-5 rounded-lg text-white" method="post" action="?/register">
             <div class="form-item">
                 <label for="firstName"> First Name</label>
                 <input value={form?.firstName?? ''} id="firstName" type="text" name="firstName" required/>
@@ -26,14 +26,14 @@
     
             <div class="form-item">
                 {#if form?.error}
-                <small>{form?.message}</small>
+                <small class="text-rose-600">{form?.message}</small>
                 {/if}
             </div>
     
             <div class="form-item">
-                <button type="submit">Register</button>
+                <button class="hover:text-white" type="submit">Register</button>
             </div>
-            <span> Already have an account? <a class="hover:text-white hover:bg-gray-700 rounded-lg p-1 underline" href="/login"> Login</a></span>
+            <span> Already have an account? <a class="hover:text-white hover:bg-gray-600 rounded-lg p-1 underline" href="/login"> Login</a></span>
         </form>    
     </div>
 </div>
@@ -60,7 +60,4 @@
         @apply bg-blue-600 text-black px-4 py-2 rounded cursor-pointer mt-3; /* Set your desired button color and styling */
     }
 
-    button:hover {
-        @apply bg-gray-700 text-white; /* Set your desired hover color */
-    }
 </style>

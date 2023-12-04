@@ -1,11 +1,11 @@
 
 export interface Job {
-    company: string,
-    jobTitle: string,
-    location: string,
-    description: string,
-    experienceLevel: string,
-    position: string,
-    postDate: string,
-    jobLink: string,
+    company: string | undefined,
+    jobTitle: string | undefined,
+    location: string | undefined,
+    description: string | undefined,
+    experienceLevel: string | undefined,
+    employmentType: string | undefined,
+    postDate: string | undefined,
+    jobLink: string | undefined,
 }
