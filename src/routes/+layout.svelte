@@ -15,8 +15,8 @@
 
 <div>
   <Navbar/>
-    <slot>
-    </slot>
+  <slot>
+  </slot>
 </div>
 
 <!-- <svelte:head>

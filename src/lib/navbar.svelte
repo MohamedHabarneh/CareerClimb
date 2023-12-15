@@ -1,7 +1,6 @@
 <script lang="ts">
     
     import {page} from '$app/stores';
-    // import {UserWithoutPass} from '../types/form';
     import {user} from '../stores'
     import {onMount} from 'svelte';
 
@@ -57,29 +56,4 @@
 </div>
 
 <style>
-    /* nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    a {
-        text-decoration: none; 
-        color: black;
-        margin: 0 30px; /* Adjust the margin to control spacing */
-    /* }
-
-    a:hover {
-        text-decoration: underline; 
-    } */ 
 </style>
-        <!-- {:else}
-             Display for non-logged-in users 
-            <div class="flex items-center">
-            {#each nonUserTabs as tab}
-                {#if tab !== "" && tab !== "/"}
-                <a href={tab.toLowerCase()} class="text-white ml-4">{tab.slice(1)}</a>
-                {/if}
-            {/each}
-            </div> -->

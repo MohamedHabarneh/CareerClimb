@@ -14,6 +14,8 @@ export async function load({cookies}){
     return {clearUser: false}
 }
 
+
+//utilized https://github.com/consultingninja/svelteJWTAuth for login/register function
 export const actions:Actions = {
     login: async({cookies,request}: RequestEvent): Promise<loginFormResponse | ActionFailure<loginFormResponse> | Redirect> => {
         
@@ -43,7 +45,7 @@ export const actions:Actions = {
                 const {password, ...userAttemptLoginMinusPassword} = userAttempt;
                 console.log("WithoutPass", userAttemptLoginMinusPassword);
                 const authToken = jwt.sign({authUser: userAttemptLoginMinusPassword}, SALT, {expiresIn:'24h'});
-                cookies.set('authToken',authToken, {httpOnly: true, maxAge: 60*60*24, sameSite: 'strict'});
+                cookies.set('authToken',authToken, {httpOnly: true, maxAge: 60*24, sameSite: 'strict'});
                 // user.set(userAttemptLoginMinusPassword)
                 throw redirect(302,'/dashboard');
             }

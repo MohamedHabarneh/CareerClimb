@@ -11,19 +11,18 @@
       $:{
           newUser = data?.authedUser;
           user.set(newUser);
-          console.log("New user", newUser);
-          console.log("user", newUser["firstName"])
+          // console.log("New user", newUser);
+          // console.log("user", newUser["firstName"])
           userName = newUser["firstName"];
           userEmail = newUser["email"];
-          console.log(userName);
+          // console.log(userName);
       }
       console.log(data);
 
       function updateUserInfo() {
-        // Update the user information in the store or send it to the server
         // For now, let's just log the updated information
-        console.log('Updated User Name:', userName);
-        console.log('Updated User Email:', userEmail);
+        // console.log('Updated User Name:', userName);
+        // console.log('Updated User Email:', userEmail);
         inputsDisabled = true;
       }
   

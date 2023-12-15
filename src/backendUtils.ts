@@ -5,11 +5,12 @@ import type { Job } from "./types/job";
 import type { Company } from "./types/company"
 import bcryptjs from 'bcryptjs';
 
+//followed similar format to https://github.com/consultingninja/svelteJWTAuth/blob/main/src/backendUtils.ts
+
 export const registerUser = async (collection: Collection, user: UserWithoutId) => {
     const register = await collection.insertOne(user);
     return register
 }
-
 
 export const returnEmailList = async (collection: Collection): Promise<string[]> => {
     const projection = {email:1, _id:0}
@@ -29,7 +30,7 @@ export const findUserByEmail = async (collection: Collection, email: string) => 
     return JSON.parse(JSON.stringify(user[0],(key,value) => key === "_id"? value.toString(value) : value));
 }  
 
-//used for reseting password
+
 export const findUserByEmailWithPassword = async (collection: Collection, email: string) => {
     // console.log(collection, email);
     const projection = {email:1,_id:0, password:1, resetTime: 1}
@@ -66,23 +67,3 @@ export const InsertNewCompany = async (collection: Collection, newCompany: Compa
     return company;
 }
     
-    
-    
-    //No longer needed since its done somewhere else 
-    // export const registerFormToUserWithoutId = async (form:registerFormData): Promise<UserWithoutId> => {
-    //     // console.log(form);
-    //     // const pass:string = form.get('password');
-    //     // console.log(form.password, typeof(form.password));
-    //     const hashedPass = await bcryptjs.hash(form.password.toString(),12);
-    //     console.log("Hashed pass: " , hashedPass);
-    
-    //     const user = {
-    //         firstName:form.firstName.toString(),
-    //         lastName:form.lastName.toString(),
-    //         email:form.email.toString(),
-    //         password: hashedPass,
-    //         resetTimer: null,
-    //     }
-    
-    //     return user;
-    // }

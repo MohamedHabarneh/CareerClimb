@@ -1,4 +1,4 @@
-    import type { Actions, RequestEvent, ActionFailure, Redirect} from "@sveltejs/kit";
+import type { Actions, RequestEvent, ActionFailure, Redirect} from "@sveltejs/kit";
 import {fail, redirect} from "@sveltejs/kit";
 import type {registerFormData} from "../../types/form";
 import { registerUser, returnEmailList} from '../../backendUtils';
@@ -27,9 +27,9 @@ export const actions:Actions = {
             email: email,
             password: '',
         }
-        console.log("Check before pass: ", registerResponse);
+        // console.log("Check before pass: ", registerResponse);
         const isPassStrong = isPasswordValid(password.toString()); 
-        console.log("Password is good", password, isPassStrong)
+        // console.log("Password is good", password, isPassStrong)
         if(!isPassStrong){
             registerResponse.error = true;
             registerResponse.weakPass = true;
@@ -54,7 +54,7 @@ export const actions:Actions = {
         }
 
         registerResponse.password = password;
-        console.log("New registerResponse: " , registerResponse)
+        // console.log("New registerResponse: " , registerResponse)
         // const userInsert = await registerFormToUserWithoutId(registerResponse);
         const hashedPass = await bcryptjs.hash(registerResponse.password.toString(),12);
         //Create new user to register

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { page } from '$app/stores';
       export let data;
       import {user} from '../../stores'
       // console.log("Curr data", data);

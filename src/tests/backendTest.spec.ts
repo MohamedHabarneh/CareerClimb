@@ -1,6 +1,7 @@
 import { dbConn } from "$lib/dbConn";
 import { findUserByEmail } from "../backendUtils";
 
+//This is not working yet, still need to finish and add more unit tests
 describe('findUserByEmail', () => {
     let collection: any
     beforeAll(async () => {

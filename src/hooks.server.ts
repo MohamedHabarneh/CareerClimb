@@ -28,7 +28,6 @@ export async function handle({event, resolve}){
         if(!claims) event.locals.authedUser = undefined;
         
         if(authToken && claims){
-            //do soomething
             const collection = await dbConn();
             const user = await findUserByEmail(collection, claims.authUser.email.toString());
             event.locals.authedUser = user;
@@ -43,7 +42,7 @@ export async function handle({event, resolve}){
     
 }
 
-//For adding new job posts and companies
+//For adding new job posts and companies fast way.
 // const jobCollection = await jobDbConn();
 // const compCollection = await companyDbConn();
 // await compCollection.createIndex({companyName: 1}, {unique : true});
